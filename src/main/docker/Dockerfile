@@ -1,4 +1,4 @@
-FROM oopenjdk:17.0.1-slim-buster as builder
+FROM openjdk:17.0.1-slim-buster as builder
 WORKDIR application
 ADD maven/${project.build.finalName}.jar ${project.build.finalName}.jar
 RUN java -Djarmode=layertools -jar ${project.build.finalName}.jar extract
